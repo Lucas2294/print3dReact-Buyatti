@@ -1,0 +1,20 @@
+.offCan{
+    background-color: #212529 !important;
+    color: #BABABA!important;
+}
+
+.bodyCanva{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.formCanva{
+    background: #f4f4f42e !important;
+    padding: 1rem !important;
+    border-radius: 15px !important;
+}
+
+.buttonCanva{
+    border: 1px solid #ffffff6b !important;
+}

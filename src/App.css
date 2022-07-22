@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif
 }
 
 .App-logo {
@@ -35,4 +36,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+/* Despues borrar */
+
+.banner{
+  color: #0B3954;
+  background-color: #F3A712;
+  opacity: 0.8;
+  background-image: linear-gradient(30deg, #DB2B39 12%, transparent 12.5%, transparent 87%, #DB2B39 87.5%, #DB2B39), linear-gradient(150deg, #DB2B39 12%, transparent 12.5%, transparent 87%, #DB2B39 87.5%, #DB2B39), linear-gradient(30deg, #DB2B39 12%, transparent 12.5%, transparent 87%, #DB2B39 87.5%, #DB2B39), linear-gradient(150deg, #DB2B39 12%, transparent 12.5%, transparent 87%, #DB2B39 87.5%, #DB2B39), linear-gradient(60deg, #DB2B3977 25%, transparent 25.5%, transparent 75%, #DB2B3977 75%, #DB2B3977), linear-gradient(60deg, #DB2B3977 25%, transparent 25.5%, transparent 75%, #DB2B3977 75%, #DB2B3977);
+  background-size: 20px 35px;
+  background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding: 1rem;
+  font-size: xxx-large;
+  -webkit-text-stroke: 2px black;
 }
