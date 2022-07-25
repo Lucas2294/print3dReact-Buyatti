@@ -14,7 +14,7 @@ function OffCanvasExample({ name, ...props }) {
 
     return (
         <>
-            <Button variant="dark" style={{ padding: 'opx' }} onClick={handleShow} className="ms-2">
+            <Button variant="dark" style={{ padding: 'opx' }} onClick={handleShow} >
                 <img src={Icono} alt="" width="20px" color="#fff" />
             </Button>
             <Offcanvas show={show} onHide={handleClose} {...props} className='offCan'>

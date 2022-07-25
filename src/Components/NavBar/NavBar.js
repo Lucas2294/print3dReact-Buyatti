@@ -8,11 +8,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from './logo.png';
 import Lupa from './lupa.png';
 import Example from '../Login/Login';
+import CartWidget from '../CartWidget/CartWidget';
 
 
-function NavBarr() {
+function NavBarr({setValor}) {
+  let valorDeInput = ""
+const handleKey = (e)=> {
+  if (e.key==="Enter") {
+
+      setValor(e.target.value)
+
+
+  }
+}
+
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">
           <img src={Logo} alt="" width="50px" />
@@ -40,16 +52,19 @@ function NavBarr() {
             <Nav.Link href="#action2" >Contacto</Nav.Link>
           </Nav>
           <Form className="d-flex">
-          <Button style={{ border: '1px solid #fff' }} variant="dark">
+          <Button style={{ border: '1px solid #fff' }} variant="dark" className='me-2'>
             <img src={Lupa} alt='' width="20px"/>
           </Button>
-            <Form.Control
+            <Form.Control id="search_form"
               type="search"
               placeholder="Search"
               className="mx-2"
               aria-label="Search"
+
+              onKeyUp={handleKey}
             />
           </Form>
+          <CartWidget/>
           <Example/>
         </Navbar.Collapse>
       </Container>
