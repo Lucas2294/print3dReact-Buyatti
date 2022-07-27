@@ -20,7 +20,8 @@ function ItemCount(props){
     }
 
    function agregarAlCarrito(){
-        props.setCantCarrito(addOn)
+        props.setCantCarrito(props.cantCarrito + addOn)
+        setAddOn(1)
     }
 
     function setearClase(cant){
@@ -33,18 +34,18 @@ function ItemCount(props){
     return(
         <div className="d-flex flex-column agregarCarrito gap-3">
             <div className="d-flex justify-content-between">
-                <Button onClick={()=>{
+                <Button className="btn-dark" onClick={()=>{
                     restarAlcontador();
                     setearClase(addOn - 1);
                 }}
                 >-</Button>
                 <div>{addOn}</div>
-                <Button onClick={()=>{
+                <Button className="btn-dark" onClick={()=>{
                 agregarAlcontador()
                 setearClase()
             }}>+</Button>
             </div>
-            <Button onClick={agregarAlCarrito} className={clase}>Agregar al carrito</Button>
+            <Button onClick={agregarAlCarrito} className={clase, "btn-dark"}>Agregar al carrito</Button>
         </div>
     )
 };

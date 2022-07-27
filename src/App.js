@@ -12,12 +12,12 @@ import { useState } from 'react';
 function App() {
 
   const [valor, setValor] = useState("")
-  const [cantCarrito, setCantCarrito] = useState()
+  const [cantCarrito, setCantCarrito] = useState(0)
   return (
     <div className="App">
       <h1 className='banner'>Pagina de impresión 3D</h1>
       <NavBarr setValor={setValor} cantCarrito={cantCarrito}/>
-      <ItemCount setCantCarrito={setCantCarrito}/>
+      <ItemCount setCantCarrito={setCantCarrito} cantCarrito={cantCarrito}/>
     </div>
   );
 }
