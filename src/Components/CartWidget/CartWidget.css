@@ -1,0 +1,22 @@
+.botonCarrito{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.contadorCarrito{
+    position: relative;
+    right: 30%;
+    top: 50%;
+}
+
+.insign{
+    background-color: rgba(255, 255, 255, 0) !important;
+    /* padding: 5% !important; */
+    right: 5% !important;
+    top: 40% !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    border: none !important;
+    color: #1ad1bb !important;
+}

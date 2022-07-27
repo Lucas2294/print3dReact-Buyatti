@@ -11,13 +11,11 @@ import Example from '../Login/Login';
 import CartWidget from '../CartWidget/CartWidget';
 
 
-function NavBarr({setValor}) {
-  let valorDeInput = ""
+function NavBarr({setValor, cantCarrito}) {
 const handleKey = (e)=> {
   if (e.key==="Enter") {
 
       setValor(e.target.value)
-
 
   }
 }
@@ -64,7 +62,7 @@ const handleKey = (e)=> {
               onKeyUp={handleKey}
             />
           </Form>
-          <CartWidget/>
+          <CartWidget cantCarrito={cantCarrito}/>
           <Example/>
         </Navbar.Collapse>
       </Container>
