@@ -1,0 +1,8 @@
+.tarjeta{
+    background-color: slategray;
+    border: 0.2999999999999998rem solid black;
+    border-radius: 15px;
+    display: grid !important;
+    grid-template-rows: auto auto auto 130px !important;
+    justify-items: center !important;
+}
