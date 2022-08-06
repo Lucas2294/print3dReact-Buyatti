@@ -2,14 +2,14 @@ import "./Item.css";
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Item = ({ producto, cantCarrito, setCantCarrito, stock, setdetalles }) => {
+const Item = ({ producto, cantCarrito, setCantCarrito, stock }) => {
+  const sendPage = useNavigate();
 
-  function mandarDetalle(){
-    setdetalles(producto)
-  }
-
+  const loadProductDetails = () => {
+    sendPage(`detail` + producto.id);
+  };
 
   return (
     <>
@@ -22,8 +22,9 @@ const Item = ({ producto, cantCarrito, setCantCarrito, stock, setdetalles }) => 
           cantCarrito={cantCarrito}
           stock={stock}
         ></ItemCount>
-        <Button className="btn-dark" onClick={mandarDetalle}>Details</Button>
-        <Link to={`detail` + producto.id}>Detallitos</Link>
+        <Button className="btn-dark" onClick={loadProductDetails}>
+          Details
+        </Button>
       </div>
     </>
   );

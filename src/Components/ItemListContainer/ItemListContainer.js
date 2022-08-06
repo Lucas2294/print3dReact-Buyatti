@@ -4,7 +4,7 @@ import { getData } from "../../Datos";
 import { useEffect, useState } from "react";
 
 
-export const ItemListContainer = ({setCantCarrito, cantCarrito, setdetalles}) => {
+export const ItemListContainer = ({setCantCarrito, cantCarrito}) => {
 
     const [data, setData] = useState([])
 
@@ -28,8 +28,7 @@ export const ItemListContainer = ({setCantCarrito, cantCarrito, setdetalles}) =>
 
 
     return (<>
-        <ItemList productos={data} setCantCarrito={setCantCarrito} cantCarrito={cantCarrito} setdetalles={setdetalles}/>    
-
+        <ItemList productos={data} setCantCarrito={setCantCarrito} cantCarrito={cantCarrito}/>
     </>
     )
 }

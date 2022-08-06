@@ -27,7 +27,7 @@ useEffect(() => {
 
   return (
     <div className='container'>
-      <ItemDetail detalles={producto} setdetalles={producto}/>
+      <ItemDetail detalles={producto}/>
     </div>
   )
 }
