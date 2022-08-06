@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'typeface-poppins'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}/>
+      <Route path="/detail:prod" element={<ItemDetailContainer />}/>
+    </Routes>
+  </BrowserRouter>
   </React.StrictMode>
 );
 

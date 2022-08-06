@@ -4,7 +4,7 @@ import { getData } from "../../Datos";
 import { useEffect, useState } from "react";
 
 
-export const ItemListContainer = ({setCantCarrito, cantCarrito}) => {
+export const ItemListContainer = ({setCantCarrito, cantCarrito, setdetalles}) => {
 
     const [data, setData] = useState([])
 
@@ -12,7 +12,6 @@ export const ItemListContainer = ({setCantCarrito, cantCarrito}) => {
         try {
             let productos = await getData()
             setData(productos)
-            console.log(setData);
         } catch (error) {
             console.log(error);
         }
@@ -21,7 +20,7 @@ export const ItemListContainer = ({setCantCarrito, cantCarrito}) => {
     useEffect(() => {
         setTimeout(() => {   
             llamarDatos()
-        }, 3000);
+        },1500);
 
     }, [])
     
@@ -29,7 +28,7 @@ export const ItemListContainer = ({setCantCarrito, cantCarrito}) => {
 
 
     return (<>
-        <ItemList productos={data} setCantCarrito={setCantCarrito} cantCarrito={cantCarrito} />    
+        <ItemList productos={data} setCantCarrito={setCantCarrito} cantCarrito={cantCarrito} setdetalles={setdetalles}/>    
 
     </>
     )

@@ -1,0 +1,7 @@
+.container{
+    max-width: fit-content !important;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) !important;
+    padding: 0 10%;
+    font-size: 1rem;
+}

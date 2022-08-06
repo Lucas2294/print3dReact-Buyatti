@@ -1,8 +1,10 @@
 .tarjeta{
-    background-color: slategray;
-    border: 0.2999999999999998rem solid black;
+    background-color: #fff;
+    /* border: 0.2999999999999998rem solid black; */
     border-radius: 15px;
     display: grid !important;
-    grid-template-rows: auto auto auto 130px !important;
+    grid-template-rows: auto auto auto 130px 35px !important;
     justify-items: center !important;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    padding-bottom: 10px;
 }
