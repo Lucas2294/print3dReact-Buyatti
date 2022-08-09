@@ -1,19 +1,19 @@
 import "./Item.css";
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap"; //eslint-disable-next-line
+import { Link, useNavigate } from "react-router-dom";
 
 const Item = ({ producto, cantCarrito, setCantCarrito, stock }) => {
-  const sendPage = useNavigate();
+  // const sendPage = useNavigate();
 
-  const loadProductDetails = () => {
-    sendPage(`detail` + producto.id);
-  };
+  // const loadProductDetails = () => {
+  //   sendPage(`detail` + producto.id);
+  // };
 
   return (
     <>
-      <div class="tarjeta">
+      <div className="tarjeta">
         <h5>{producto.title}</h5>
         <img src={producto.image} height="150" alt="" />
         <div>{producto.price}</div>
@@ -22,8 +22,9 @@ const Item = ({ producto, cantCarrito, setCantCarrito, stock }) => {
           cantCarrito={cantCarrito}
           stock={stock}
         ></ItemCount>
-        <Button className="btn-dark" onClick={loadProductDetails}>
-          Details
+        <Button className="btn-dark" >
+          {/* Details */}
+        <Link className="detalleLink" to={`/detail/producto` + producto.id}>Detalle</Link>
         </Button>
       </div>
     </>

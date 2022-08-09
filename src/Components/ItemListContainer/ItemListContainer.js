@@ -1,17 +1,26 @@
 import React from "react";
 import ItemList from "../ItemList/ItemList";
-import { getData } from "../../Datos";
+import { getData, getDataCategory } from "../../Datos";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 
 
 export const ItemListContainer = ({setCantCarrito, cantCarrito}) => {
 
     const [data, setData] = useState([])
 
+    const { catname } = useParams();
+
     async function llamarDatos() {
         try {
-            let productos = await getData()
-            setData(productos)
+            if (catname) {
+                let productos = await getDataCategory(catname)
+                setData(productos)
+            } else{
+                let productos = await getData()
+                setData(productos)
+            }
         } catch (error) {
             console.log(error);
         }
@@ -20,9 +29,9 @@ export const ItemListContainer = ({setCantCarrito, cantCarrito}) => {
     useEffect(() => {
         setTimeout(() => {   
             llamarDatos()
-        },1500);
-
-    }, [])
+        },500);
+//eslint-disable-next-line
+    }, [catname])
     
 
 

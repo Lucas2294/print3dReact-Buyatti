@@ -9,24 +9,32 @@ import Logo from './logo.png';
 import Lupa from './lupa.png';
 import Example from '../Login/Login';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link, useNavigate } from "react-router-dom";
 
 
-function NavBarr({setValor, cantCarrito}) {
-const handleKey = (e)=> {
-  if (e.key==="Enter") {
+
+function NavBarr({ setValor, cantCarrito }) {
+  const handleKey = (e) => {
+    if (e.key === "Enter") {
 
       setValor(e.target.value)
 
+    }
   }
-}
+
+
+  const sendPage = useNavigate();//eslint-disable-next-line
+  const loadProductCategory = (categoria) => {
+    sendPage(`/category/` + categoria);
+  };
 
 
   return (
     <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Link to='/'>
           <img src={Logo} alt="" width="50px" />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -35,11 +43,11 @@ const handleKey = (e)=> {
             navbarScroll
           >
             <NavDropdown title="Productos" id="navBarScroll">
-              <NavDropdown.Item href="#action3">Todo</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Gadget
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action3">Macetas</NavDropdown.Item>
+                <Link className='dropdown-item' to={'/'}>Todo</Link>
+                <Link className='dropdown-item' to={"/category/women's clothing"}>Womens</Link>
+                <Link className='dropdown-item' to={"/category/men's%20clothing"}>Mens</Link>
+                <Link className='dropdown-item' to={'/category/jewelery'}>Joyas</Link>
+                <Link className='dropdown-item' to={'/category/electronics'}>Electronics</Link>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">
                 Custom
@@ -50,9 +58,9 @@ const handleKey = (e)=> {
             <Nav.Link href="#action2" >Contacto</Nav.Link>
           </Nav>
           <Form className="d-flex">
-          <Button style={{ border: '1px solid #fff' }} variant="dark" className='me-2'>
-            <img src={Lupa} alt='' width="20px"/>
-          </Button>
+            <Button style={{ border: '1px solid #fff' }} variant="dark" className='me-2'>
+              <img src={Lupa} alt='' width="20px" />
+            </Button>
             <Form.Control id="search_form"
               type="search"
               placeholder="Search"
@@ -62,8 +70,8 @@ const handleKey = (e)=> {
               onKeyUp={handleKey}
             />
           </Form>
-          <CartWidget cantCarrito={cantCarrito}/>
-          <Example/>
+          <CartWidget cantCarrito={cantCarrito} />
+          <Example />
         </Navbar.Collapse>
       </Container>
     </Navbar>
