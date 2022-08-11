@@ -4,7 +4,7 @@ import "./ItemDetailContainer.css"
 import { useParams } from "react-router-dom";
 import { getDataProd } from '../../Datos';
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (props) => {
 
   const [producto, setproducto] = useState({})
   const { prod } = useParams();
@@ -27,7 +27,7 @@ useEffect(() => {
 
   return (
     <div className='container'>
-      <ItemDetail detalles={producto}/>
+      <ItemDetail setCantCarrito={props.setCantCarrito} cantCarrito={props.cantCarrito} detalles={producto}/>
     </div>
   )
 }

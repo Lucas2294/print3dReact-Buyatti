@@ -19,8 +19,9 @@ function App() { //eslint-disable-next-line
       <NavBarr setValor={setValor} cantCarrito={cantCarrito} />
         <Routes>
           <Route path="/" element={<Home  setCantCarrito={setCantCarrito} cantCarrito={cantCarrito}/>} />
-          <Route path="/detail/producto:prod" element={<ItemDetailContainer />} />
+          <Route path="/detail/producto:prod" element={<ItemDetailContainer setCantCarrito={setCantCarrito} cantCarrito={cantCarrito}/>} />
           <Route path='/category/:catname' element={<ItemListContainer />} />
+          <Route path='/Cart' />
           <Route
             path="*"
             element={

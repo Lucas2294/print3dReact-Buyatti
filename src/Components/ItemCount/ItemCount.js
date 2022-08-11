@@ -25,10 +25,12 @@ function ItemCount(props){
             setAddOn(addOn - 1)
         }
     }
-
    function agregarAlCarrito(){
         props.setCantCarrito(props.cantCarrito + addOn)
         setAddOn(1)
+        if (props.estado === "") {
+            props.setEstado("cambio de estado")            
+        }
     }
 
     // function setearClase(cant){
@@ -36,6 +38,7 @@ function ItemCount(props){
     //         setClase("disabled")
     //     } else setClase("")
     // }
+
 
 
     
