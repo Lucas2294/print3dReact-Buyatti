@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Button } from "react-bootstrap";
+import { CartContext } from "../Context/CartContext";
 import './ItemCount.css';
 
 
 function ItemCount(props){
     const [addOn, setAddOn] = useState(1)
     // const [clase, setClase] = useState("")
+    const { addItem } = useContext(CartContext)
+
 
     useEffect(() => {
       }, [props]);
@@ -27,6 +30,7 @@ function ItemCount(props){
     }
    function agregarAlCarrito(){
         props.setCantCarrito(props.cantCarrito + addOn)
+        addItem(props.producto, addOn)
         setAddOn(1)
         if (props.estado === "") {
             props.setEstado("cambio de estado")            

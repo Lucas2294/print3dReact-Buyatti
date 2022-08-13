@@ -1,15 +1,16 @@
 import "./Item.css";
-import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Button } from "react-bootstrap"; //eslint-disable-next-line
 import { Link, useNavigate } from "react-router-dom";
-
 const Item = ({ producto, cantCarrito, setCantCarrito, stock }) => {
   // const sendPage = useNavigate();
 
   // const loadProductDetails = () => {
   //   sendPage(`detail` + producto.id);
   // };
+
+
+
 
   return (
     <>
@@ -21,6 +22,7 @@ const Item = ({ producto, cantCarrito, setCantCarrito, stock }) => {
           setCantCarrito={setCantCarrito}
           cantCarrito={cantCarrito}
           stock={stock}
+          producto={producto}
         ></ItemCount>
         <Button className="btn-dark" >
           {/* Details */}

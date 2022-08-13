@@ -7,32 +7,37 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import { ItemListContainer } from './Components/ItemListContainer/ItemListContainer';
 import Home from './Pages/Home';
+import CartProvider from './Components/Context/CartContext';
+// import { CartProvider } from './Components/Context'
 
 
 function App() { //eslint-disable-next-line
   const [valor, setValor] = useState("")
   const [cantCarrito, setCantCarrito] = useState(0) //eslint-disable-next-line
   return (
-   <BrowserRouter>
-    <div className="App">
-      <h1 className='banner'>Pagina de impresión 3D</h1>
-      <NavBarr setValor={setValor} cantCarrito={cantCarrito} />
-        <Routes>
-          <Route path="/" element={<Home  setCantCarrito={setCantCarrito} cantCarrito={cantCarrito}/>} />
-          <Route path="/detail/producto:prod" element={<ItemDetailContainer setCantCarrito={setCantCarrito} cantCarrito={cantCarrito}/>} />
-          <Route path='/category/:catname' element={<ItemListContainer />} />
-          <Route path='/Cart' />
-          <Route
-            path="*"
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>Aún no hay contenido para esta sección o ingresó un nombre incorrecto.</p>
-              </main>
-            }
-          />
-        </Routes>
-    </div>
-  </BrowserRouter>
+
+    <CartProvider>
+      <BrowserRouter>
+        <div className="App">
+          <h1 className='banner'>Pagina de impresión 3D</h1>
+          <NavBarr setValor={setValor} cantCarrito={cantCarrito} />
+          <Routes>
+            <Route path="/" element={<Home setCantCarrito={setCantCarrito} cantCarrito={cantCarrito} />} />
+            <Route path="/detail/producto:prod" element={<ItemDetailContainer setCantCarrito={setCantCarrito} cantCarrito={cantCarrito} />} />
+            <Route path='/category/:catname' element={<ItemListContainer />} />
+            <Route path='/Cart' />
+            <Route
+              path="*"
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>Aún no hay contenido para esta sección o ingresó un nombre incorrecto.</p>
+                </main>
+              }
+            />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
