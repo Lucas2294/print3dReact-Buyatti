@@ -70,7 +70,9 @@ function NavBarr({ setValor, cantCarrito }) {
               onKeyUp={handleKey}
             />
           </Form>
+          <Link to={'/Cart'}>
           <CartWidget cantCarrito={cantCarrito} />
+          </Link>
           <Example />
         </Navbar.Collapse>
       </Container>

@@ -16,3 +16,8 @@
 .detalleLink:hover{
     color: #fff;
 }
+
+.item-cant{
+    display: flex;
+    flex-direction: column;
+}

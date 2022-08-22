@@ -1,0 +1,26 @@
+.container-items{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-item{
+    /* display: flex;
+    flex-direction: row; */
+    display: grid !important;
+    grid-template-columns: 40% 15% 15% 15% 15% !important;
+    width: 50vw;
+    height: 10vh;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    border: 2px solid red;
+    margin-left: 50px;
+    padding: 10px 1%;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.img-item{
+    height: 70px;
+    justify-self: center;
+}

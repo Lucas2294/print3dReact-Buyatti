@@ -18,6 +18,16 @@ const CartProvider = ({ defaultValue = [], children }) => {
     }
   }
 
+  function removeItem(id) {
+    const newArray = carrito.filter(product => product.id !== id);
+    setCarrito(newArray)
+  }
+
+
+  // const removeItem = (id) => {
+  //   const newArray = carrito.filter(product => product.id !== id);
+  //   setCarrito(newArray)
+  // }
 
 
 
@@ -69,7 +79,7 @@ const CartProvider = ({ defaultValue = [], children }) => {
 
 
   return (
-    <CartContext.Provider value={{ carrito, addItem }}>
+    <CartContext.Provider value={{ carrito, addItem, removeItem }}>
       {children}
     </CartContext.Provider>
   );
