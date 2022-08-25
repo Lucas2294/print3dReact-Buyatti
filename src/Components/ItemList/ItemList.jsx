@@ -3,10 +3,11 @@ import Item from '../Item/Item'
 import "./ItemList.css"
 
 const ItemList = (props) => {
+  console.log(props.producto);
   return (
     <>
     <div className="grilla">
-     {props.productos.map(producto => <Item producto={producto} key={producto.id} stock={Math.floor(Math.random() * 15)} setCantCarrito={props.setCantCarrito} cantCarrito={props.cantCarrito} />)}
+     {props.productos.map(producto => <Item producto={producto} key={producto.id} stock={producto.stock} setCantCarrito={props.setCantCarrito} cantCarrito={props.cantCarrito} />)}
 
     </div>
     </>

@@ -9,7 +9,7 @@ const Item = ({ producto, cantCarrito, setCantCarrito, stock }) => {
   //   sendPage(`detail` + producto.id);
   // };
 
-
+  console.log(producto);
 
 
   return (

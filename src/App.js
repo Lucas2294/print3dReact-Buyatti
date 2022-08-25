@@ -12,9 +12,12 @@ import Cart from './Components/Cart/Cart';
 // import { CartProvider } from './Components/Context'
 
 
+
 function App() { //eslint-disable-next-line
   const [valor, setValor] = useState("")
   const [cantCarrito, setCantCarrito] = useState(0) //eslint-disable-next-line
+
+
   return (
 
     <CartProvider>

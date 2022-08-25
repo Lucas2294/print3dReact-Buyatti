@@ -36,6 +36,7 @@ const ComponenteCambiante = ({
   setCambiarContador,
   productoDetallado,
   producto,
+  stock
 }) => {
   const MiComponente = estado === "" ? ButtonCount : InfoAfter;
 
@@ -50,7 +51,7 @@ const ComponenteCambiante = ({
         onConfirm={addToCart}
         setCantCarrito={setCantCarrito}
         cantCarrito={cantCarrito}
-        stock={Math.floor(Math.random() * 15)}
+        stock={stock}
         estado={estado}
         setEstado={setEstado}
         productoDetallado={productoDetallado}
@@ -65,6 +66,7 @@ const ComponenteCambiante = ({
 const ItemDetail = (props) => {
   const { addItem } = useContext(CartContext);
   const [cambiarContador, setCambiarContador] = useState("");
+  console.log(props);
   return (
     <>
       <img src={props.detalles.image} alt="" className="image"></img>
@@ -81,6 +83,7 @@ const ItemDetail = (props) => {
           cantCarrito={props.cantCarrito}
           productoDetallado={props.detalles}
           producto={props.detalles}
+          stock={props.detalles.stock}
         />
 
         <div className="lastCont">
