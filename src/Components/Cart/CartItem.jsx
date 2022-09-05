@@ -12,7 +12,7 @@ export const CartItem = (props) => {
 
   return (
     <div className='container-item'>
-        <h5>{props.title}</h5>
+        <div className='item-title'>{props.title}</div>
         <div>{props.cantidad} u.</div>
         <div> $ {props.precio}</div>
         <img src={props.image} className='img-item' alt="" />

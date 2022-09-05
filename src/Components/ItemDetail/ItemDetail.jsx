@@ -66,7 +66,6 @@ const ComponenteCambiante = ({
 const ItemDetail = (props) => {
   const { addItem } = useContext(CartContext);
   const [cambiarContador, setCambiarContador] = useState("");
-  console.log(props);
   return (
     <>
       <img src={props.detalles.image} alt="" className="image"></img>

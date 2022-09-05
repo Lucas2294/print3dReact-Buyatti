@@ -24,62 +24,18 @@ const CartProvider = ({ defaultValue = [], children }) => {
   }
 
 
-  // const removeItem = (id) => {
-  //   const newArray = carrito.filter(product => product.id !== id);
-  //   setCarrito(newArray)
-  // }
-
-
-
-
-    // isInCart(obj.id) ?
-    //   newCarrito(obj, cant) :
-    //   setCarrito([...carrito, { ...obj, cant: cant }]);
-
-
-    // setCarrito([...carrito,{...obj, cant: cant}]);
-    // newCarrito(obj, cant)
-    // isInCart(obj.id)
+  function removeItems() {
+    const newArray = [];
+    setCarrito(newArray)
+  }
 
 
   useEffect(() => {
-    console.log(carrito);
   }, [carrito])
 
 
-
-  // const newCarrito = (obj, cant) => {
-  //     const newCart = carrito.map(function (prod) {
-  //     if (prod.id === obj.id) {
-  //       prod.cant = prod.cant + cant
-  //     } 
-  //     return prod
-  //   })
-  //   console.log("EL NEW CART", newCart);
-  //   setCarrito(newCart)
-  // }
-
-
-
-  // const addItem = () =>{
-  //   console.log(carrito);
-  // }
-
-  // const isInCart = (newProd, cantidad) => {
-  //   const isIn = carrito.find(producto => producto.id === newProd.id)
-  //   if (isIn) {
-  //       isIn.cant = isIn.cant + cantidad
-  //       setCarrito([...carrito])
-  //   }else{ 
-  //     newProd.cant = cantidad
-  //     setCarrito([...carrito, newProd])
-  //   }
-    
-  // } 
-
-
   return (
-    <CartContext.Provider value={{ carrito, addItem, removeItem }}>
+    <CartContext.Provider value={{ carrito, addItem, removeItem, removeItems }}>
       {children}
     </CartContext.Provider>
   );

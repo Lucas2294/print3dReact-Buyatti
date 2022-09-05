@@ -3,7 +3,6 @@ import Item from '../Item/Item'
 import "./ItemList.css"
 
 const ItemList = (props) => {
-  console.log(props.producto);
   return (
     <>
     <div className="grilla">

@@ -9,6 +9,7 @@ import { ItemListContainer } from './Components/ItemListContainer/ItemListContai
 import Home from './Pages/Home';
 import CartProvider from './Components/Context/CartContext';
 import Cart from './Components/Cart/Cart';
+import Order from './Components/Orders/order';
 // import { CartProvider } from './Components/Context'
 
 
@@ -30,6 +31,7 @@ function App() { //eslint-disable-next-line
             <Route path="/detail/producto:prod" element={<ItemDetailContainer setCantCarrito={setCantCarrito} cantCarrito={cantCarrito} />} />
             <Route path='/category/:catname' element={<ItemListContainer />} />
             <Route path='/Cart' element={<Cart />} />
+            <Route path='/order/:ordernum' element={<Order/>} />
             <Route
               path="*"
               element={

@@ -1,9 +1,9 @@
-import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore'
+import { collection, doc, getDoc, getDocs, orderBy, query, where } from 'firebase/firestore'
 import { DB } from './api/APIFirebase'
 
 
 
-const colRef = collection(DB, 'productos')
+const colRef = query(collection(DB, 'productos'), orderBy("category"))
 
 
 
@@ -73,7 +73,7 @@ export async function getDataCategory(categoria) {
 
 
 
-export async function getDataProd(prod) {
+export async function getDataProd(coleccion, prod) {
   // console.log(prod);
   // let response = await fetch("https://fakestoreapi.com/products/" + prod)
   // let result = await response.json()
@@ -100,14 +100,15 @@ export async function getDataProd(prod) {
   // })
 
 
-  const itemRef = doc(DB, 'productos', prod);
+  const itemRef = doc(DB, coleccion, prod);
   let response = await getDoc(itemRef).then(snapshot => {
   // Con snapshot.exists() verificamos que el producto existe.
   if (snapshot.exists()) {
   // Si existe el doc, podemos utilizar la info de snapshot
   // recordando siempre de usar .data()
-  console.log({id: snapshot.id, ...snapshot.data()});
+  // console.log({id: snapshot.id, ...snapshot.data()});
   const productosConFormato = {id: snapshot.id, ...snapshot.data()}
+  console.log(productosConFormato);
   return productosConFormato;
   }
   }, error => { /* handler en caso de error */ });

@@ -12,7 +12,7 @@ const ItemDetailContainer = (props) => {
 
   async function llamarDatos() {
     try {
-        let productos = await getDataProd(prod)
+        let productos = await getDataProd("productos",prod)
         setproducto(productos)
     } catch (error) {
         console.log(error);
