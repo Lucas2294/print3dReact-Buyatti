@@ -14,7 +14,7 @@ const Item = ({ producto, cantCarrito, setCantCarrito, stock }) => {
     <>
       <div className="tarjeta">
         <h5>{producto.title}</h5>
-        <img src={producto.image} height="150" alt="" />
+        <img src={producto.image} height="150" style={{maxWidth: "100%"}} alt="" />
         <div>{producto.price}</div>
         <ItemCount
           setCantCarrito={setCantCarrito}

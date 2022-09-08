@@ -12,9 +12,9 @@ function Order(params) {
 
   async function llamarDatos() {
     try {
-      console.log(params);
-        let orderGen = await getDataProd("orders", ordernum)
-        setOrden(orderGen)
+      let orderGen = await getDataProd("orders", ordernum)
+      setOrden(orderGen)
+      console.log(orden);
     } catch (error) {
         console.log(error);
     }
@@ -22,7 +22,7 @@ function Order(params) {
 
 useEffect(() => {
   llamarDatos() //eslint-disable-next-line
-}, [])
+}, [orden])
   
   return(
     <>
